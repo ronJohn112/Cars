@@ -35,10 +35,10 @@ public class Main extends PApplet {
         ourCar3 = new Car(this, 0, x += inc, s / 3);
         ourCar4 = new Car(this, 0, x += inc, s / 4);
         ourCar5 = new Car(this, 0, x += inc, s * 2);
-        ourCar6 = new Car(this, 0, x += inc, s / 4);
+        ourCar6 = new Car(this, 0, x += inc, s / 4+1);
         ourCar7 = new Car(this, 0, x += inc, s * 3);
         ourCar8 = new Car(this, 0, x += inc, s / 2);
-        ourCar9 = new Car(this, 0, x += inc, s * 4);
+        ourCar9 = new Car(this, 0, x += inc, s * 2/3);
         ourCar10 = new Car(this, 0, x += inc, s / 5);
     }
 
