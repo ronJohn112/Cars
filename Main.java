@@ -1,70 +1,35 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package cars;
 
-/**
- *
- * @author naveeouthaphone
- */
 import processing.core.*;
+import java.util.Random;
 
 public class Main extends PApplet {
-
-    Car ourCar;
-    Car ourCar2;
-    Car ourCar3;
-    Car ourCar4;
-    Car ourCar5;
-    Car ourCar6;
-    Car ourCar7;
-    Car ourCar8;
-    Car ourCar9;
-    Car ourCar10;
+    //Create an array for 10 cars.
+    final int c = 10;
+    Car [] ourCar = new Car [c];
 
     @Override
     public void setup() {
-        size(500, 500);
+        size(500, 500); // Display a graphic window 500 by 500.
         smooth();
-        int inc = 500 / 11;
+        int inc = 500 / 13; // display each car evenly.
         int x = inc;
-        int s = 10;
-        ourCar = new Car(this, 0, x, s);
-        ourCar2 = new Car(this, 0, x += inc, s / 2);
-        ourCar3 = new Car(this, 0, x += inc, s / 3);
-        ourCar4 = new Car(this, 0, x += inc, s / 4);
-        ourCar5 = new Car(this, 0, x += inc, s * 2);
-        ourCar6 = new Car(this, 0, x += inc, s / 4 + 1);
-        ourCar7 = new Car(this, 0, x += inc, s * 3);
-        ourCar8 = new Car(this, 0, x += inc, s / 2);
-        ourCar9 = new Car(this, 0, x += inc, s * 2 / 3);
-        ourCar10 = new Car(this, 0, x += inc, s / 3 + 1);
+        Random randomGenerator = new Random(); //Generate random numbers for speed.
+        for(int i = 0; i < c; i++) {
+            ourCar[i] = new Car(this, 0, x+= inc, randomGenerator.nextInt(15) + 1);
+            //Loop to create the 10 cars.
+        }
     }
 
     @Override
     public void draw() {
         background(204);
-        ourCar.draw();
-        ourCar.moveLeft();
-        ourCar2.draw();
-        ourCar2.moveLeft();
-        ourCar3.draw();
-        ourCar3.moveLeft();
-        ourCar4.draw();
-        ourCar4.moveLeft();
-        ourCar5.draw();
-        ourCar5.moveLeft();
-        ourCar6.draw();
-        ourCar6.moveLeft();
-        ourCar7.draw();
-        ourCar7.moveLeft();
-        ourCar8.draw();
-        ourCar8.moveLeft();
-        ourCar9.draw();
-        ourCar9.moveLeft();
-        ourCar10.draw();
-        ourCar10.moveLeft();
+        for(int i = 0; i < c; i++) {
+            ourCar[i].draw();
+            ourCar[i].moveLeft();
+            //Loop the cars to be drawn.
+        }
     }
 
     public static void main(String[] args) {
